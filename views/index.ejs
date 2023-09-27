@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đạt Đủng Đỉnh</title>
+    <script src="https://kit.fontawesome.com/ad778f42b3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row" style="height: 100vh; overflow: auto;">
+            <div class="col-2 border-end border-dark">
+                <!-- khung ảnh logo-maker -->
+                <div class="p-2 mt-1 d-flex justify-content-center align-items-center">
+                    <img src="./images/logo-maker.png" alt="logo-maker" class="rounded-circle" width="64" height="64">
+                </div>
+                <!-- khung menu -->
+                <div>
+                    <!-- 1 item menu -->
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="btn fw-bold" data-bs-toggle="collapse" href="#collapseOne"><i class="fa-solid fa-earth-oceania text-muted"></i> Trang Chủ</a>
+                        </div>
+                        <div id="collapseOne" class="collapse" data-bs-parent="#accordion">
+                            <div class="card-body">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-fire text-muted"></i>&emsp;<span>New Feeds</span></a>
+                                    <a href="#" class="list-group-item list-group-item-action list-group-item-success"><i class="fa-brands fa-pagelines text-muted"></i>&emsp;<span>Giới thiệu Trang</span></a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 1 item menu -->
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="btn fw-bold" data-bs-toggle="collapse" href="#collapseTwo"><i class="fa-solid fa-person-rays text-muted"></i> Thay đổi Bản thân</a>
+                        </div>
+                        <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+                            <div class="card-body">
+                                <div class="list-group">
+                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action active">Tháng 08/2023</a>
+                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action">Tháng 07/2023</a>
+                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action">Tháng 06/2023</a>
+                                </div>                            
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 1 item menu -->
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="btn fw-bold" data-bs-toggle="collapse" href="#collapseThree"><i class="fa-solid fa-people-group text-muted"></i></i> Cộng đồng</a>
+                        </div>
+                        <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+                            <div class="card-body">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"><i class="fa-solid fa-signal text-muted"></i> Trợ giúp Trực tiếp</a>
+                                    <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"><i class="fa-solid fa-square-share-nodes text-muted"></i> Chia sẽ Kinh nghiệm</a>
+                                    <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"><i class="fa-solid fa-bug text-muted"></i> Chia sẽ Lỗi</a> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 1 item menu -->
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="btn fw-bold" data-bs-toggle="collapse" href="#collapseFour"><i class="fa-solid fa-gift text-muted"></i></i> Quà tặng Tháng 08</a>
+                        </div>
+                        <div id="collapseFour" class="collapse" data-bs-parent="#accordion">
+                            <div class="card-body">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"><i class="fa-solid fa-boxes-stacked text-muted"></i> Các phần quà</a>
+                                    <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"><i class="fa-solid fa-clock-rotate-left text-muted"></i> Lịch sử Tặng quà</a> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 1 item menu -->
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="btn fw-bold" data-bs-toggle="collapse" href="#collapseFive"><i class="fa-solid fa-circle-dollar-to-slot text-muted"></i> Đóng góp</a>
+                        </div>
+                        <div id="collapseFive" class="collapse" data-bs-parent="#accordion">
+                            <div class="card-body">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"><i class="fa-solid fa-hand-holding-dollar text-muted"></i> Bán hàng cho DatDungDinh</a>
+                                    <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"><i class="fa-solid fa-circle-user text-muted"></i> Thông tin DatDungDinh</a> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" p-3 overflow-auto" style="max-height: 55vh;">
+                        <div class="my-1">
+                            <span class="badge rounded-pill bg-success">Cập nhật <i class="fas fa-check-circle text-warning"></i></span>
+                        </div>
+                        <div class="my-2 bg-light px-1 rounded-2 border border-secondary">
+                            <div class="spinner-grow spinner-grow-sm text-success"></div>
+                            <span class="small">Đạt đang livestream "Thay Đổi Bản Thân"</span>
+                            <span class="small fst-italic fw-lighter">(5 min ago)</span>
+                        </div>
+                        <div class="my-2 bg-light px-1 rounded-2 border border-secondary">
+                            <div class="spinner-grow spinner-grow-sm text-white"></div>
+                            <span class="small">Tài Phan vừa post 1 issues mức độ khẩn cấp</span>
+                            <span class="small fst-italic fw-lighter">(4 giờ trước)</span>
+                        </div>
+                        <div class="my-2 bg-light px-1 rounded-2 border border-secondary">
+                            <div class="spinner-grow spinner-grow-sm text-success"></div>
+                            <span class="small">Hello ae, hôm nay tới mình stream nha ==))</span>
+                            <span class="small fst-italic fw-lighter">(4 giờ trước)</span>
+                        </div>
+                        <div class="my-2 bg-light px-1 rounded-2 border border-secondary">
+                            <div class="spinner-grow spinner-grow-sm text-success"></div>
+                            <span class="small">500 ae ơi mình cần giúp gấp ạ, vấn đề về phần cứng card đồ họa ạ. Ai biết fix ib em trả giá cho ạ!! ahuhu</span>
+                            <span class="small fst-italic fw-lighter">(4 giờ trước)</span>
+                        </div>
+                        <div class="my-2 bg-light px-1 rounded-2 border border-secondary">
+                            <div class="spinner-grow spinner-grow-sm text-success"></div>
+                            <span class="small">Tài Phan vừa post 1 issues mức độ khẩn cấp</span>
+                            <span class="small fst-italic fw-lighter">(4 giờ trước)</span>
+                        </div>
+                        <div class="my-2 bg-light px-1 rounded-2 border border-secondary">
+                            <div class="spinner-border spinner-border-sm text-success"></div>
+                            <span class="small">Tài Phan vừa post 1 issues mức độ khẩn cấp</span>
+                            <span class="small fst-italic fw-lighter">(4 giờ trước)</span>
+                        </div>
+                        <div class="my-2 bg-light px-1 rounded-2 border border-secondary">
+                            <span class="small">Tài Phan vừa post 1 issues mức độ khẩn cấp</span>
+                            <div class="spinner-grow spinner-grow-sm text-success"></div>
+                            <span class="small fst-italic fw-lighter">(4 giờ trước)</span>
+                        </div>
+                        <div class="my-2 bg-light px-1 rounded-2 border border-secondary">
+                            <span class="small">Tài Phan vừa post 1 issues mức độ khẩn cấp</span>
+                            <div class="spinner-grow spinner-grow-sm text-success"></div>
+                            <span class="small fst-italic fw-lighter">(4 giờ trước)</span>
+                        </div>
+                        <div class="my-2 bg-light px-1 rounded-2 border border-secondary">
+                            <span class="small">Tài Phan vừa post 1 issues mức độ khẩn cấp</span>
+                            <div class="spinner-grow spinner-grow-sm text-success"></div>
+                            <span class="small fst-italic fw-lighter">(4 giờ trước)</span>
+                        </div>
+                        <div class="my-2 bg-light px-1 rounded-2 border border-secondary">
+                            <span class="small">Tài Phan vừa post 1 issues mức độ khẩn cấp</span>
+                            <div class="spinner-grow spinner-grow-sm text-success"></div>
+                            <span class="small fst-italic fw-lighter">(3 giờ trước)</span>
+                        </div>
+                        <div class="my-2 bg-light px-1 rounded-2 border border-secondary">
+                            <span class="small">Tài Phan vừa post 1 issues mức độ khẩn cấp</span>
+                            <div class="spinner-grow spinner-grow-sm text-success"></div>
+                            <span class="small fst-italic fw-lighter">(4 giờ trước)</span>
+                        </div>
+                        <div class="my-2 bg-light px-1 rounded-2 border border-secondary">
+                            <span class="small">Tài Phan vừa post 1 issues mức độ khẩn cấp</span>
+                            <div class="spinner-grow spinner-grow-sm text-success"></div>
+                            <span class="small fst-italic fw-lighter">(3 giờ trước)</span>
+                        </div>
+                        <div class="my-2 bg-light px-1 rounded-2 border border-secondary">
+                            <span class="small">Tài Phan vừa post 1 issues mức độ khẩn cấp</span>
+                            <div class="spinner-grow spinner-grow-sm text-success"></div>
+                            <span class="small fst-italic fw-lighter">(3 giờ trước)</span>
+                        </div>
+                        <div class="my-2 bg-light px-1 rounded-2 border border-secondary">
+                            <span class="small">Tài Phan vừa post 1 issues mức độ khẩn cấp</span>
+                            <div class="spinner-grow spinner-grow-sm text-success"></div>
+                            <span class="small fst-italic fw-lighter">(3 giờ trước)</span>
+                        </div>
+                        <div class="my-2 bg-light px-1 rounded-2 border border-secondary">
+                            <span class="small">Tài Phan vừa post 1 issues mức độ khẩn cấp</span>
+                            <div class="spinner-grow spinner-grow-sm text-success"></div>
+                            <span class="small fst-italic fw-lighter">(3 giờ trước)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10">
+                <h1>Trang chủ</h1>
+            </div>
+        </div>
+        <div class="position-fixed top-0 end-0">
+            <div class="d-flex align-items-center p-2 border border-secondary">
+                <div class="small mx-1">Lv.1</div>
+                <div class="progress border border-dark crs" style="width: 100px;">
+                    <div class="progress-bar bg-success progress-bar-striped" style="width:4%"></div>
+                </div>
+                <div class="dropdown dropdown-menu-end border border-dark rounded-pill mx-1">
+                    <img src="./images/hacker.png" alt="avatar" class="rounded-circle m-2 crs dropdown-toggle" width="24" data-bs-toggle="dropdown" />
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Thông tin Cá nhân</a></li>
+                        <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
+                        <li><a class="dropdown-item" href="#">Lịch sử Hành trình</a></li>
+                        <li><a class="dropdown-item" href="#">Nhiệm vụ</a></li>
+                        <li><a class="dropdown-item" href="#">Hộp thư</a></li>
+                        <li><a class="dropdown-item-text" href="#">Đăng xuất</a></li>
+                    </ul>
+                </div>
+                <!-- <div>
+                    <i class="fa-regular fa-bell crs" style="font-size: larger;"></i>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</body>
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+<script>
+    var socket = io.connect('ws://localhost:3000');
+    socket.on('connect', function() {
+      console.log('Connected to server');
+    });
+    socket.on('emitter', function(data) {
+      console.log('emitter=',data);
+    });
+</script>
+</html>

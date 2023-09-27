@@ -1,0 +1,23 @@
+context:
+- diem danh 4-5h, do admin mở, đặt time kết thúc điểm danh, +1 tích lũy
+- đăng tus chia sẽ lỗi +1 tích lũy
+- đăng tus chia sẽ daily +1 tích lũy
+- đóng chia sẽ 
+- thu âm mic x
+- tạo issue realtime, vote close issue, up ảnh issue, giúp đỡ ẩn danh
+- chart monthly, bản ghi lịch sử
+- tổng kết top 1-10, top 3 được quà, top 4+ dc 10k momo
+- xac thuc thong tin
+- Giúp đỡ issue:
+topic tự đóng sau 7 ngày,
+- tiến bộ: 
+học 3 từ vựng tiếng anh mỗi ngày, renew từ vựng, 
+- tâm sự ngày
+- nhìn lại:
+member
+- Cộng đồng
+- tích lũy
+- bài chia sẽ mới nhất
+- đóng góp
+admin
+- 

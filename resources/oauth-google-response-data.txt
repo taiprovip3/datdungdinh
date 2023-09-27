@@ -1,0 +1,41 @@
+user_data= {
+  provider: 'google',
+  sub: '104275750427262488779',
+  id: '104275750427262488779',
+  displayName: 'nhi nguyen',
+  name: { givenName: 'nhi', familyName: 'nguyen' },
+  given_name: 'nhi',
+  family_name: 'nguyen',
+  email_verified: true,
+  verified: true,
+  language: 'vi',
+  email: 'nhito1doraemon@gmail.com',
+  emails: [ { value: 'nhito1doraemon@gmail.com', type: 'account' } ],
+  photos: [
+    {
+      value: 'https://lh3.googleusercontent.com/a/AAcHTtePDgf_ncsPYoIZJ8VKVaUtM68kVoiFIOcOx885sh6y_n0=s96-c',
+      type: 'default'
+    }
+  ],
+  picture: 'https://lh3.googleusercontent.com/a/AAcHTtePDgf_ncsPYoIZJ8VKVaUtM68kVoiFIOcOx885sh6y_n0=s96-c',
+  _raw: '{\n' +
+    '  "sub": "104275750427262488779",\n' +
+    '  "name": "nhi nguyen",\n' +
+    '  "given_name": "nhi",\n' +
+    '  "family_name": "nguyen",\n' +
+    '  "picture": "https://lh3.googleusercontent.com/a/AAcHTtePDgf_ncsPYoIZJ8VKVaUtM68kVoiFIOcOx885sh6y_n0\\u003ds96-c",\n' +
+    '  "email": "nhito1doraemon@gmail.com",\n' +
+    '  "email_verified": true,\n' +
+    '  "locale": "vi"\n' +
+    '}',
+  _json: {
+    sub: '104275750427262488779',
+    name: 'nhi nguyen',
+    given_name: 'nhi',
+    family_name: 'nguyen',
+    picture: 'https://lh3.googleusercontent.com/a/AAcHTtePDgf_ncsPYoIZJ8VKVaUtM68kVoiFIOcOx885sh6y_n0=s96-c',
+    email: 'nhito1doraemon@gmail.com',
+    email_verified: true,
+    locale: 'vi'
+  }
+}

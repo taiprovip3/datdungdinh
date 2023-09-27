@@ -1,0 +1,27 @@
+* {
+    font-size: large;
+}
+
+.google-btn {
+    background-color: lightgray;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.google-btn:hover {
+    background-color: #357ae8;
+}
+
+.google-icon {
+    background-image: url('https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg');
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}

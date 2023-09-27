@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="google-signin-client_id" content="369235292137-0508fkrqq5su6unmts43f04dde1tlsuf.apps.googleusercontent.com"> -->
+    <title>Đăng ký tài khoản</title>
+    <script src="https://kit.fontawesome.com/ad778f42b3.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js" integrity="sha512-DNI/FJdkfyeuPUal7lDkRVg0mFY2n4IZJJYqPbQWLL0COxLi6G6nmf5gr1vW1Bd4wYC09hOvZVsSclfXxUTU/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.js" integrity="sha512-xuJa2iaoUiQzj8b9ENT7vyJkaWrPeg5OooeqTgE47QlOCdh10rrthb9g74yk3eIXYgUXUQc1vNvldedWxb2eSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4 d-flex justify-content-center align-items-center position-relative" style="height: 100vh;">
+        <div class="border border-dark bg-light p-5 rounded-2 position-absolute" id="register-box">
+          <div class="text-center">
+              <img src="./images/logo-maker.png" alt="logo-maker" width="64" class="rounded-circle">
+          </div>
+          <form id="register-form" method="post">
+            <div class="mb-3 mt-3">
+              <label for="register-email" class="form-label">Email:</label>
+              <span class="d-none text-danger small" id="register-span-email">Định dạng email không chính xác!</span>
+              <input type="email" class="form-control" id="register-email" placeholder="@ Nhập email.." name="register-email" autofocus required>
+            </div>
+            <div class="mb-3">
+              <label for="register-pwd" class="form-label">Password:</label>
+              <span class="d-none text-danger small" id="register-span-pwd"></span>
+              <input type="password" class="form-control" id="register-pwd" placeholder="Nhập mật khẩu.." name="register-pwd" minlength="8" required>
+            </div>
+            <div class="mb-3">
+              <label for="register-repwd" class="form-label">Nhập lại Password:</label>
+              <span class="d-none text-danger small" id="register-span-repwd">2 Mật khẩu chưa giống nhau!</span>
+              <input type="password" class="form-control" id="register-repwd" placeholder="Nhập lại mật khẩu.." name="register-repwd" minlength="8" required>
+            </div>
+            <div class="form-check form-switch mb-3">
+              <input class="form-check-input" type="checkbox" id="register-showpwd" name="register-showpwd" value="yes">
+              <label class="form-check-label" for="register-showpwd">Hiển mật khẩu</label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 p-3">Đăng ký Tài khoản</button>
+            <a class="google-btn w-100 p-3 text-decoration-none my-1" type="button" href="/oauth/google">
+              <span class="google-icon"></span>
+              Sign up with Google
+            </a>
+          </form>
+          <div class="mt-3 text-center">
+              <span class="d-block">Đã có tài khoản? <span class="text-primary text-decoration-underline crs" id="redirect-login">Đăng nhập ngay</span></span>
+              <span>Hoặc <span class="text-primary text-decoration-underline crs" id="redirect-forgotpassword">Quên mật khẩu?</span></span>
+          </div>
+        </div>
+        <div class="border border-dark bg-light p-5 rounded-2 position-absolute" id="login-box">
+          <div class="text-center">
+              <img src="./images/logo-maker.png" alt="logo-maker" width="64" class="rounded-circle">
+          </div>
+          <form id="login-form" method="post">
+            <div class="mb-3 mt-3">
+              <label for="login-email" class="form-label">Email:</label>
+              <input type="email" class="form-control" id="login-email" placeholder="@ Nhập email.." name="login-email" autofocus required>
+            </div>
+            <div class="mb-3">
+              <label for="login-pwd" class="form-label">Password:</label>
+              <input type="password" class="form-control" id="login-pwd" placeholder="🔐 Nhập password.." name="login-pwd" minlength="8" required>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="login-showpwd" name="login-showpwd" value="yes">
+                <label class="form-check-label" for="login-showpwd">Hiển mật khẩu</label>
+              </div>
+              <div class="form-check mb-3">
+                <label for="remember" class="form-check-label">
+                  <input class="form-check-input" type="checkbox" name="remember" id="remember" checked> Ghi nhớ
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 p-3">Đăng nhập Tài khoản</button>
+            <a id="btn-login" class="google-btn w-100 p-3 text-decoration-none my-1" type="button" href="/oauth/google">
+              <span class="google-icon"></span>
+              Sign in with Google
+            </a>
+          </form>
+          <div class="mt-3">
+              Chưa có tài khoản? <span class="text-primary text-decoration-underline crs" id="redirect-register">Đăng ký ngay</span>
+          </div>
+        </div>
+        <div class="position-absolute" id="status-box"></div>
+      </div>
+      <div class="col-4"></div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://unpkg.com/bcryptjs@2.4.3/dist/bcrypt.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-toast-plugin@1.3.2/dist/jquery.toast.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/jquery-toast-plugin@1.3.2/dist/jquery.toast.min.css" rel="stylesheet">
+  <script src="https://accounts.google.com/gsi/client" async></script>
+  <script src="/js/encrypt.js"></script>
+  <script>
+        $(document).ready(function() {
+          // Hide div boxes
+          $("#login-box").hide();
+          $("#status-box").hide();
+
+          // Register email (form submited)
+          $("#register-form").on("submit", function(e) {
+            e.preventDefault();
+            const email = $("#register-email").val();
+            const pwd = $("#register-pwd").val();
+            const repwd = $("#register-repwd").val();
+            // Validation
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (emailRegex.test(email)) {
+              $("#register-span-email").removeClass('d-block');
+              $("#register-span-email").addClass('d-none');
+            } else {
+              console.error("Email không hợp lệ: " + email);
+              $("#register-span-email").removeClass('d-none');
+              $("#register-span-email").addClass('d-block');
+              return;
+            }
+            if(repwd !== pwd) {
+              $("#register-span-repwd").removeClass('d-none');
+              $("#register-span-repwd").addClass('d-block');
+              return;
+            } else {
+              $("#register-span-repwd").removeClass('d-block');
+              $("#register-span-repwd").addClass('d-none');
+            }
+            const data = {// json data
+              email: email,
+              password:  window.encryptPassword(pwd),
+            };
+            $.ajax({
+              url: '/register/email',
+              method: 'POST',
+              data: data,
+              success: function(response) {
+                console.log("Phản hồi từ máy chủ:", response);
+                $("#register-box").animate({left: '50px', opacity: '0'}, function(){
+                  $(this).css('left', 'unset');
+                  $(this).hide();
+                  $("#status-box").html(response.html);
+                  $("#status-box").css({
+                      "opacity":"0",
+                      "display":"block",
+                  }).show().animate({opacity:1});
+                });
+              }, error: function(error) {
+                console.error("Lỗi:", error);
+              }
+            });
+          });
+
+          // Login email (form submited)
+          $("#login-form").on("submit", function(e) {
+            e.preventDefault();
+            const email = $("#login-email").val();
+            const pwd = $("#login-pwd").val();
+            const remember = $("#remember").is(':checked') ? 1 : 0;
+            const data = {// json data
+              email: email,
+              password: pwd,
+              is_remember: remember,
+            };
+            $.ajax({
+              url: '/login/email',
+              method: 'POST',
+              data: data,
+              success: function(response) {
+                console.log("Phản hồi từ máy chủ:", response);// Có trả về jwt token
+                if(response.toastIcon === 'success') {
+                  // redirect sang route login with jwt token
+                  window.location.href = "/dashboard";
+                } else {
+                  $.toast({
+                    heading: response.toastHeading,
+                    text: response.message,
+                    showHideTransition: 'slide',
+                    icon: response.toastIcon,
+                  });
+                  $("#login-pwd").val("");
+                  $("#login-pwd").focus();
+                }
+              }, error: function(error) {
+                console.error("Lỗi:", error);
+              }
+            });
+          });
+          
+          // Show password
+          $("#register-showpwd").change(function() {
+            if($(this).is(":checked")) {
+              $("#register-pwd").attr('type', 'text');
+              $("#register-repwd").attr('type', 'text');
+            } else {
+              $("#register-pwd").attr('type', 'password');
+              $("#register-repwd").attr('type', 'password');
+            }
+          });
+          $("#login-showpwd").change(function() {
+            if($(this).is(":checked")) {
+              $("#login-pwd").attr('type', 'text');
+            } else {
+              $("#login-pwd").attr('type', 'password');
+            }
+          });
+
+          // Redirect login
+          $("#redirect-login").click(function() {
+            $("#register-box").animate({left: '50px', opacity: '0'}, function(){
+              $(this).css('left', 'unset');
+              $(this).hide();
+              $("#login-box").css({
+                  "opacity":"0",
+                  "display":"block",
+              }).show().animate({opacity:1});
+            });
+          });
+
+          // Redirect register
+          $("#redirect-register").click(function() {
+            $("#login-box").animate({left: '50px', opacity: '0'}, function(){
+              $(this).css('left', 'unset');
+              $(this).hide();
+              $("#register-box").css({
+                  "opacity":"0",
+                  "display":"block",
+              }).show().animate({opacity:1});
+            });
+          });
+          
+          // Back clicked
+          $("#back").click(function() {
+            $("#status-box").animate({left: '50px', opacity: '0'}, function(){
+              $(this).hide();
+              $("#register-box").css({
+                  "opacity":"0",
+                  "display":"block",
+              }).show().animate({opacity:1});
+            });
+          });
+        });    
+
+    
+  </script>
+</body>
+</html>
