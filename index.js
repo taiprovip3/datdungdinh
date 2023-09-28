@@ -15,6 +15,7 @@ const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
 const bycrypt = require('bcryptjs');
 const bcrypt = require('bcrypt');
+const SystemHealthMonitor = require('system-health-monitor');
 
 const pool = new Pool({
   user: "taiproduaxe",
@@ -60,6 +61,26 @@ app.use(cookieParser('concavang'));
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
+const monitorConfig = {
+  checkIntervalMsec: 1000,
+  mem: {
+    thresholdType: 'rate',
+    highWatermark: 0.3
+  },
+  cpu: {
+    calculationAlgo: 'last_value',
+    thresholdType: 'rate',
+    highWatermark: 0.3,
+  },
+}
+const monitor = new SystemHealthMonitor(monitorConfig);
+monitor.start()
+  .then(() => {
+    console.log('monitor started!');
+  }).catch(err => {
+    console.error("err minitor=",err);
+    process.exit(1);
+  });
 const file = fs.readFileSync('./resources/FD6DBED2E1E6782AC215F955FA7563FD.txt')
 const filePath = path.join(__dirname, 'resources', 'FD6DBED2E1E6782AC215F955FA7563FD.txt');
 const options = {
