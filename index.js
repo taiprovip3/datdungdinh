@@ -16,6 +16,7 @@ const nodemailer = require('nodemailer');
 const bycrypt = require('bcryptjs');
 const bcrypt = require('bcrypt');
 const SystemHealthMonitor = require('system-health-monitor');
+var counter = 0;
 
 const pool = new Pool({
   user: "taiproduaxe",
@@ -65,12 +66,13 @@ const monitorConfig = {
   checkIntervalMsec: 1000,
   mem: {
     thresholdType: 'rate',
-    highWatermark: 0.3
+    highWatermark: 0.8,
   },
   cpu: {
-    calculationAlgo: 'last_value',
+    calculationAlgo: 'sma',
     thresholdType: 'rate',
-    highWatermark: 0.3,
+    highWatermark: 0.8,
+    periodPoints: 1,
   },
 }
 const monitor = new SystemHealthMonitor(monitorConfig);
@@ -178,7 +180,6 @@ app.get('/dashboard', authenticateToken, async (req, res) => {
 
 app.post('/login/email', async (req, res) => {
   try {
-    console.log('request comming=',req.body.email);
     const { email, password, is_remember } = req.body;
     const queryUser = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
     /**
@@ -227,6 +228,8 @@ app.post('/login/email', async (req, res) => {
       message: token,
       html: ``,
     }
+    counter++;
+    console.log('counter=',counter);
     return res.json(dataResponse);
   } catch (error) {
     
