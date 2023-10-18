@@ -14,10 +14,10 @@ const { Pool } = require('pg');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
 const bycrypt = require('bcryptjs');
-const bcrypt = require('bcrypt');
 const SystemHealthMonitor = require('system-health-monitor');
 var counter = 0;
 
+// DB connection
 const pool = new Pool({
   user: "taiproduaxe",
   host: "dpg-cjt898h5mpss738mq070-a.singapore-postgres.render.com",
@@ -44,6 +44,7 @@ pool.query('SELECT NOW()', (err, res) => {
   }
 });
 
+// App settings
 const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -62,6 +63,7 @@ app.use(cookieParser('concavang'));
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
+// Monitoring
 const monitorConfig = {
   checkIntervalMsec: 1000,
   mem: {
@@ -83,11 +85,17 @@ monitor.start()
     console.error("err minitor=",err);
     process.exit(1);
   });
-const file = fs.readFileSync('./resources/FD6DBED2E1E6782AC215F955FA7563FD.txt')
-const filePath = path.join(__dirname, 'resources', 'FD6DBED2E1E6782AC215F955FA7563FD.txt');
+
+// Certificates
+// const options = {
+//   key: fs.readFileSync('./certificates/erukascholar.live/key.pem'),
+//   cert: fs.readFileSync('./certificates/erukascholar.live/certificate.crt'),
+// }
+const file = fs.readFileSync('./resources/7D11107900BA646A084C33B2969E83CA.txt');
+const filePath = path.join(__dirname, 'resources', '7D11107900BA646A084C33B2969E83CA.txt');
 const options = {
-  key: fs.readFileSync('./certificates/key.pem'),
-  cert: fs.readFileSync('./certificates/erukalearn_me.crt'),
+  key: fs.readFileSync('./certificates/erukalearn.me/key.pem'),
+  cert: fs.readFileSync('./certificates/erukalearn.me/erukalearn_me.crt'),
 }; 
 const server = https.createServer(options, app);
 const io = socketIO(server);
@@ -422,7 +430,7 @@ app.get('/oauth/google/success', authenticateGoogleOAuth, async (req, res) => {
 app.get('/oauth/google/failure', (req, res) => {
   return res.send('Somethings went wrong!');
 });
-app.get('/.well-known/pki-validation/FD6DBED2E1E6782AC215F955FA7563FD.txt', (req, res) => {
+app.get('/.well-known/pki-validation/7D11107900BA646A084C33B2969E83CA.txt', (req, res) => {
   return res.sendFile(filePath);
 });
 
